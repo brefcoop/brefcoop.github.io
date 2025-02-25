@@ -1,0 +1,210 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #27ae60;
+    --text-color: #2c3e50;
+    --light-gray: #f8f9fa;
+    --border-color: #edf2f7;
+    --light-green: rgba(39, 174, 96, 0.03);
+    --green-shadow: rgba(39, 174, 96, 0.1);
+    --background-gradient: linear-gradient(135deg, var(--light-green), var(--light-gray));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: var(--light-gray);
+    min-height: 100vh;
+    color: var(--text-color);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    min-height: 100vh;
+    width: 100%;
+    background: var(--background-gradient);
+}
+
+.left-section {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-right: 1px solid var(--border-color);
+    position: relative;
+    height: 100vh;
+    background: transparent;
+}
+
+.mission-text {
+    max-width: 600px;
+    text-align: center;
+    margin-top: 25vh;
+}
+
+.mission-text p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: var(--secondary-color);
+    font-weight: 600;
+    letter-spacing: 0;
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+}
+
+.contact-cards {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 15vh;
+}
+
+.contact-card {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: white;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.contact-card i {
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 20px var(--green-shadow);
+}
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem;
+    position: fixed;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('https://images.unsplash.com/photo-1558616629-899031969d5e?auto=format&fit=crop&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.company-name {
+    font-size: 11rem;
+    font-weight: 800;
+    color: white;
+    line-height: 0.9;
+    margin-bottom: 2rem;
+    letter-spacing: -6px;
+    text-align: right;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.company-name::after {
+    content: '.';
+    color: var(--accent-color);
+}
+
+.tagline {
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: right;
+    letter-spacing: -0.5px;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin-left: auto;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .left-section {
+        height: auto;
+        min-height: 50vh;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 3rem;
+    }
+
+    .right-section {
+        position: relative;
+        width: 100%;
+        height: 50vh;
+        padding: 3rem;
+    }
+
+    .company-name {
+        font-size: 8rem;
+        text-align: center;
+    }
+
+    .tagline {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+    .mission-text {
+        margin-top: 10vh;
+    }
+
+    .mission-text p {
+        font-size: 1.3rem;
+    }
+
+    .contact-cards {
+        gap: 2.5rem;
+        margin-bottom: 10vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .left-section, .right-section {
+        padding: 2rem;
+    }
+
+    .company-name {
+        font-size: 5rem;
+        letter-spacing: -3px;
+    }
+
+    .tagline {
+        font-size: 1.4rem;
+    }
+
+    .mission-text p {
+        font-size: 1.1rem;
+    }
+
+    .contact-cards {
+        gap: 2rem;
+    }
+
+    .contact-card {
+        width: 50px;
+        height: 50px;
+    }
+
+    .contact-card i {
+        font-size: 1.1rem;
+    }
+} 
